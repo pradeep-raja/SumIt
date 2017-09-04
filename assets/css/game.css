@@ -1,0 +1,126 @@
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.center {
+  margin: auto;
+  width: 598px;
+}
+
+table.fixed {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+table.fixed td {
+  overflow: hidden;
+  width: 50px;
+  height: 53px;
+  text-align: center;
+  font-weight: bold;
+  border-color: aliceblue;
+  border-width: 2px;
+}
+
+h2 {
+  color: darkcyan
+}
+
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  color: #ffffff;
+  font-size: 14px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+.left-red {
+  width: 0px;
+  border-top: 53px solid #f44336;
+  border-right: 50px solid transparent;
+  float: left;
+}
+
+.left-blue {
+  width: 0px;
+  border-top: 53px solid #3f51b5;
+  border-right: 50px solid transparent;
+  float: left;
+}
+
+.left-yellow {
+  width: 0px;
+  border-top: 53px solid #FF9800;
+  border-right: 50px solid transparent;
+  float: left;
+}
+
+.right-blue {
+  width: 0px;
+  border-bottom: 53px solid #3f51b5;
+  border-left: 50px solid transparent;
+  float: left;
+  margin-left: -50px;
+}
+
+.right-red {
+  width: 0px;
+  border-bottom: 53px solid #f44336;
+  border-left: 50px solid transparent;
+  float: left;
+  margin-left: -50px;
+}
+
+.right-yellow {
+  width: 0px;
+  border-bottom: 53px solid #FF9800;
+  border-left: 50px solid transparent;
+  float: left;
+  margin-left: -50px;
+}
+
+.left-num {
+  float: left;
+  margin-left: -46px;
+  margin-top: -2px;
+}
+
+.right-num {
+  float: left;
+  margin-left: -22px;
+  margin-top: 16px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -80px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

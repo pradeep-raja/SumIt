@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="gameApp">
+
+<head>
+  <script src="assets/js/seedrandom.min.js"></script>
+  <script src="assets/js/angular.min.js"></script>
+  <script src="assets/js/game.js"></script>
+  <link rel="stylesheet" href="assets/css/game.css">
+</head>
+
+<body ng-controller="GameController as game" ng-keydown="game.onKeyDown($event)">
+  <div class="center">
+    <h2><span>Score : {{game.score}}</span><span style="float:right;" ng-show="game.over">Game Over</span></h2>
+    <div>
+      <table class="fixed" border="1">
+        <thead></thead>
+        <tbody>
+          <tr ng-repeat="gridRow in game.grid">
+            <td ng-style="game.isObject(gridElement) ? {} : (gridElement == -100 ?  {'background-color':'white'} : ((gridElement == 0) ?  {'background-color':'#FF9800'} : (gridElement < 0 ? {'background-color':'#3f51b5'}:{'background-color':'#f44336'})))"
+              ng-repeat="gridElement in gridRow track by $index">
+              <font ng-show="!game.isObject(gridElement)" color="white" size="6"> {{ (gridElement
+                < 0 ? (gridElement * -1) : gridElement)==1 00 ? "" : (gridElement < 0 ? (gridElement * -1)
+                  : gridElement)}}</font>
+                  <div ng-show="game.isObject(gridElement)">
+                    <div>
+                      <div ng-class="gridElement[0] == 0 ? game.leftYellow : (gridElement[0] < 0 ? game.leftBlue : game.leftRed)"></div>
+                      <div ng-class="gridElement[1] == 0 ? game.rightYellow : (gridElement[1] < 0 ? game.rightBlue : game.rightRed)"></div>
+                    </div>
+                    <div class="left-num">
+                      <font color="white" size="6">{{gridElement[0]
+                        < 0 ? -1 * gridElement[0]:gridElement[0]}}</font>
+                    </div>
+
+                    <div class="right-num">
+                      <font color="white" size="6">{{gridElement[1]
+                        < 0 ? -1 * gridElement[1]:gridElement[1]}}</font>
+                    </div>
+                  </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <br/>
+      <a class="btn" value="Start" href ng-click="game.onStart()">Start</a>
+      <div class="tooltip" style="float:right;">?
+        <span class="tooltiptext">Count of blue values should be equal to count of red values to clear a row. Up button to stop the current block. Any one of the values can used for double valued block.
+          </span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
